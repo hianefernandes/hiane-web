@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+A linha acima define o tipo de documento como HTML5
+Ela é obrigatória no início de qualquer página HTML moderna.
+-->
+
+<html lang="pt-BR">
+<!-- "lang=pt-BR" indica que o idioma da página é português do Brasil -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- UTF-8 garante que acentos e caracteres especiais funcionem corretamente -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- "viewport" é essencial para responsividade, faz a página se adaptar em celulares/tablets -->
+
+    <title>Nascimento do Projeto</title>
+    <!-- Título que aparece na aba do navegador -->
+
+    <style>
+        /* 
+        Aqui colocamos o CSS (estilo visual da página)
+        Ele está dentro do <style> mas poderia ser em um arquivo externo também.
+        */
+
+        body {
+            /* Estilo do corpo da página */
+            font-family: Arial, Helvetica, sans-serif; /* Fonte legível e padrão */
+            text-align: center; /* Centraliza o conteúdo */
+            background: linear-gradient(to right, #74ebd5, #9face6); /* Fundo com degradê */
+            color: #333; /* Cor do texto */
+            margin: 0; /* Remove margens padrão */
+            padding: 0; /* Remove espaçamento padrão */
+            height: 100vh; /* Ocupa 100% da tela */
+            display: flex; /* Usamos flexbox para alinhar */
+            flex-direction: column; /* Conteúdo em coluna */
+            justify-content: center; /* Centraliza na vertical */
+            align-items: center; /* Centraliza na horizontal */
+        }
+
+        h1 {
+            font-size: 2.5em; /* Tamanho do título */
+            color: #222; /* Cor do título */
+        }
+
+        p {
+            font-size: 1.2em; /* Tamanho do parágrafo */
+            margin-top: 10px;
+        }
+
+        /* Responsividade: ajusta o tamanho em telas menores */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em; /* Menor em celular */
+            }
+
+            p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Todo conteúdo visível da página fica dentro do <body> -->
+
+    <h1>🚀 Bem-vindo ao nascimento do meu projeto!</h1>
+    <!-- Mensagem principal do projeto -->
+
+    <p>Este é o início oficial da minha jornada em programação web.</p>
+    <!-- Texto explicativo abaixo do título -->
+
+</body>
+
+</html>
