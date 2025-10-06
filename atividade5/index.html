@@ -1,0 +1,118 @@
+<!-- index.html
+     Página do desafio: paleta monocromática (preto, branco, cinza).
+     Comentários em PT-BR explicando cada parte para facilitar seu aprendizado.
+-->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <!-- meta para responsividade em dispositivos móveis -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Desafio - Paleta Preto/Branco/Cinza</title>
+
+  <!-- Fonte do Google (opcional). Pode remover se preferir -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Link para o arquivo CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HEADER: logo + navegação -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Logo simples (texto) -->
+      <div class="logo">
+        MeuProjeto<span class="logo-dot">.</span>
+      </div>
+
+      <!-- Botão que aparece em telas pequenas para abrir/fechar o menu -->
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+
+      <!-- Navegação principal.
+           IMPORTANTE: altere o href abaixo para o caminho real do index do seu projeto.
+           Ex.: href="../projeto/index.html" ou "/meuProjeto/index.html" -->
+      <nav class="main-nav" aria-label="Menu principal">
+        <a href="index.html" id="project-link">Ir para o index do projeto</a>
+        <a href="#paleta">Paleta de cores</a>
+        <a href="#exemplos">Exemplos</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN: conteúdo principal -->
+  <main>
+    <!-- HERO: introdução -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Paleta Profissional — Preto, Branco e Cinza</h1>
+        <p class="lead">Design limpo, legível e moderno usando variações neutras.</p>
+        <!-- Chamar atenção para o link do projeto (mesmo link que está no cabeçalho) -->
+        <p class="cta"><a class="btn" href="index.html">Abrir index do projeto</a></p>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: Definição da paleta (exigido pela atividade) -->
+    <section id="paleta" class="palette-section container">
+      <h2>Definição da paleta</h2>
+      <p>
+        Tipo de paleta: <strong>Monocromática / Neutra</strong>.<br>
+        Cor principal: <strong>Preto</strong> — usado para títulos, logotipo e elementos de maior destaque.<br>
+        Branco: usado como fundo principal para dar respiro e clareza.<br>
+        Cinzas: usados para fundos secundários, bordas e textos de suporte.
+      </p>
+
+      <!-- Amostras de cor (swatches) -->
+      <div class="swatches">
+        <div class="swatch">
+          <div class="color color-black" aria-hidden="true"></div>
+          <div class="label">Preto — <code>#0b0b0b</code> (cor principal)</div>
+        </div>
+        <div class="swatch">
+          <div class="color color-darkgray" aria-hidden="true"></div>
+          <div class="label">Cinza escuro — <code>#4a4a4a</code> (texto secundário)</div>
+        </div>
+        <div class="swatch">
+          <div class="color color-gray" aria-hidden="true"></div>
+          <div class="label">Cinza claro — <code>#e6e6e6</code> (fundo/card)</div>
+        </div>
+        <div class="swatch">
+          <div class="color color-white" aria-hidden="true"></div>
+          <div class="label">Branco — <code>#ffffff</code> (fundo principal)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: Exemplos de componentes usando a paleta -->
+    <section id="exemplos" class="container sample-section">
+      <h2>Exemplos de componentes</h2>
+
+      <!-- Grid responsivo de cartões -->
+      <div class="cards">
+        <!-- Cartão 1 (principal) -->
+        <article class="card">
+          <h3>Cartão de destaque</h3>
+          <p>Fundo branco, texto em preto, borda sutil em cinza claro.</p>
+          <button class="btn-outline">Ação</button>
+        </article>
+
+        <!-- Cartão 2 (secundário) -->
+        <article class="card muted">
+          <h3>Cartão secundário</h3>
+          <p>Fundo em cinza claro para sinalizar conteúdo menos prioritário.</p>
+          <button class="btn">Ação</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 — Paleta: Preto / Branco / Cinza. lembre-se de ajustar o link do "index do projeto" para o caminho correto do seu trabalho.</p>
+    </div>
+  </footer>
+
+  <!-- Script para o menu responsivo (arquivo separado: js/main.js) -->
+  <script src="js/main.js"></script>
+</body>
+</html>

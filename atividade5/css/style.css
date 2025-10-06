@@ -1,0 +1,216 @@
+/* css/style.css
+   Estilos comentados em PT-BR. Todas as cores da paleta estão definidas como variáveis CSS.
+*/
+
+/* === Variáveis de tema (paleta) === */
+:root{
+  /* cor principal (preto) */
+  --color-black: #0b0b0b;
+  /* cinza escuro (texto secundário) */
+  --color-dark: #4a4a4a;
+  /* cinza claro (fundo de cards / bordas) */
+  --color-gray: #e6e6e6;
+  /* branco (fundo principal) */
+  --color-white: #ffffff;
+
+  /* espaçamentos / largura máxima */
+  --max-width: 1100px;
+  --gap: 1rem;
+  --radius: 8px;
+}
+
+/* === Reset simples e base tipográfica === */
+* { box-sizing: border-box; }
+html,body { height:100%; }
+body{
+  margin:0;
+  background: var(--color-white); /* fundo principal branco */
+  color: var(--color-black);      /* texto principal em preto */
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+/* container centralizado para limitar largura */
+.container{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* === Cabeçalho === */
+.site-header{
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-gray); /* linha sutil */
+  position: sticky;
+  top:0;
+  z-index: 100;
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: var(--gap);
+  padding: 0.75rem 0;
+}
+
+/* logo do site (texto) */
+.logo{
+  font-weight:700;
+  font-size:1.125rem;
+  color: var(--color-black);
+}
+/* pequeno detalhe no logo */
+.logo-dot{
+  color: var(--color-dark);
+  opacity:0.9;
+}
+
+/* botão para abrir o menu em mobile (invisível em desktop) */
+.nav-toggle{
+  display:none;            /* visível apenas em telas pequenas (media query) */
+  background:transparent;
+  border: none;
+  font-size:1.2rem;
+  cursor:pointer;
+  color: var(--color-black);
+}
+
+/* Navegação principal (links em linha) */
+.main-nav{
+  display:flex;
+  align-items:center;
+  gap: 0.5rem;
+}
+.main-nav a{
+  text-decoration:none;
+  color: var(--color-black);
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  font-weight:500;
+}
+.main-nav a:hover, .main-nav a:focus{
+  background: var(--color-gray); /* destaque sutil ao passar o mouse */
+  outline:none;
+}
+
+/* === HERO === */
+.hero{
+  padding: 3.25rem 0;
+  background: linear-gradient(180deg, var(--color-white) 0%, var(--color-gray) 100%); /* leve transição para profundidade */
+}
+.hero-inner{
+  text-align:left;
+}
+.hero h1{
+  margin:0 0 0.5rem 0;
+  font-size: clamp(1.6rem, 2.8vw, 2.6rem); /* responsivo */
+  color: var(--color-black);
+}
+.lead{
+  margin:0 0 1rem 0;
+  color: var(--color-dark);
+}
+
+/* botões estilizados */
+.btn{
+  display:inline-block;
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-decoration:none;
+  font-weight:600;
+  border: none;
+  cursor:pointer;
+}
+.btn:hover{ opacity: 0.95; }
+
+/* botão com visual "outline" (inverso) */
+.btn-outline{
+  background: transparent;
+  color: var(--color-black);
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-gray);
+  cursor:pointer;
+}
+
+/* === Paleta (swatches) === */
+.palette-section h2{ margin-top:0; }
+.swatches{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+  margin-top:1rem;
+}
+.swatch{
+  display:flex;
+  align-items:center;
+  gap:0.75rem;
+  min-width: 220px;
+}
+.color{
+  width:56px;
+  height:56px;
+  border-radius:8px;
+  border:1px solid rgba(0,0,0,0.05);
+}
+/* classes para cada cor da paleta */
+.color-black{ background: var(--color-black); }
+.color-darkgray{ background: var(--color-dark); color: var(--color-white); }
+.color-gray{ background: var(--color-gray); }
+.color-white{ background: var(--color-white); border:1px solid var(--color-gray); }
+
+/* label explicativa da cor */
+.label{
+  font-size:0.95rem;
+  color: var(--color-dark);
+}
+
+/* === Cards e exemplos === */
+.cards{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:1rem;
+  margin-top:1rem;
+}
+.card{
+  background: var(--color-white);
+  border: 1px solid var(--color-gray);
+  padding:1rem;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+}
+.card h3{ margin-top:0; color: var(--color-black); }
+.card p{ color: var(--color-dark); margin-bottom:1rem; }
+
+/* versão "muted" do cartão com fundo cinza claro */
+.card.muted{
+  background: var(--color-gray);
+  border-color: rgba(0,0,0,0.04);
+}
+
+/* === Rodapé === */
+.site-footer{
+  border-top: 1px solid var(--color-gray);
+  padding: 1rem 0;
+  background: var(--color-white);
+  color: var(--color-dark);
+  font-size:0.95rem;
+}
+
+/* === Responsividade === */
+@media (max-width: 900px){
+  .cards{ grid-template-columns: 1fr; } /* empilha os cards */
+}
+
+@media (max-width: 768px){
+  /* em telas pequenas, escondemos a nav e mostramos o botão de menu */
+  .main-nav{ display:none; position: absolute; right:1rem; top:64px; background: var(--color-white); padding: 0.6rem; border-radius:8px; border:1px solid var(--color-gray); box-shadow: 0 6px 18px rgba(0,0,0,0.06); flex-direction: column; min-width: 200px; }
+  .main-nav a{ margin:0.35rem 0; }
+  .nav-toggle{ display:block; }
+  /* quando a classe .open for adicionada via JS, mostramos o menu */
+  .main-nav.open{ display:flex; }
+}
