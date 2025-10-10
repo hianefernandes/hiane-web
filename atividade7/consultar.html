@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Consultar Atividades — Lista</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Pequeno estilo local para organizar os botões / opções dentro desta página */
+    .atividades-list li { margin:16px 0; }
+    .opcoes { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+    .opcoes a { display:inline-block; padding:8px 10px; border-radius:8px; text-decoration:none;
+                font-weight:600; color:var(--preto); background:var(--cinza-claro); }
+    .opcoes a.small { font-weight:500; padding:6px 8px; font-size:14px; background:#fff; border:1px solid rgba(0,0,0,0.06);}
+    .hint { color:var(--cinza); font-size:14px; margin-top:12px; }
+    /* Reaproveita variáveis do seu style.css caso esteja vinculado */
+  </style>
+</head>
+<body>
+  <!-- Mantém o mesmo header do projeto para consistência -->
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">🏠</span>
+        <span class="project-title">Meu Projeto</span>
+      </div>
+
+      <button id="navToggle" class="nav-toggle" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menu">
+        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+
+      <nav id="mainNav" class="nav-links" role="navigation" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="consultar.html" class="active">Consultar atividades</a></li>
+          <li><a href="../atividade1/index.html">Atividade 1</a></li>
+          <li><a href="../atividade2/index.html">Atividade 2</a></li>
+          <li><a href="../atividade3/index.html">Atividade 3</a></li>
+          <li><a href="../atividade4/index.html">Atividade 4</a></li>
+          <li><a href="../atividade5/index.html">Atividade 5</a></li>
+          <li><a href="../atividade6/index.html">Atividade 6</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <section class="consult-list">
+      <h1>Consultar Atividades</h1>
+      <p>Escolha a atividade que deseja abrir. Se uma atividade tiver mais de um arquivo disponível, ofereço as opções encontradas (clique em qual abrir).</p>
+
+      <!-- Lista ordenada das atividades (1 a 7) -->
+      <ol class="atividades-list">
+        <!-- ATIVIDADE 1 -->
+        <li>
+          <strong>Atividade 1</strong>
+          <div class="opcoes">
+            <!-- Caminho padrão (pasta/index.html) -->
+            <a class="small" href="../atividade1/index.html" target="_self">Abrir: atividade1/index.html</a>
+          </div>
+          <div class="hint">Descrição: arquivo principal da Atividade 1.</div>
+        </li>
+
+        <!-- ATIVIDADE 2 -->
+        <li>
+          <strong>Atividade 2</strong>
+          <div class="opcoes">
+            <!-- Muitas vezes o arquivo fica em atividade2/index.html -->
+            <a class="small" href="../atividade2/index.html" target="_self">Abrir: atividade2/index.html</a>
+            <!-- caso seu projeto tenha html dentro de outra pasta, mantemos como fallback -->
+            <a class="small" href="../atividade2/index.html" target="_self">(fallback)</a>
+          </div>
+          <div class="hint">Descrição: página da Atividade 2 (pode conter pasta css/img dentro da própria pasta).</div>
+        </li>
+
+        <!-- ATIVIDADE 3 -->
+        <li>
+          <strong>Atividade 3</strong>
+          <div class="opcoes">
+            <!-- Vi na sua foto que existe um arquivo chamado atividade-3.html e também index.html -->
+            <a href="../atividade3/atividade-3.html">Abrir: atividade3/atividade-3.html</a>
+            <a class="small" href="../atividade3/index.html">Abrir: atividade3/index.html</a>
+          </div>
+          <div class="hint">Use o primeiro (atividade-3.html) se preferir o arquivo específico; caso não exista, abra o index.</div>
+        </li>
+
+        <!-- ATIVIDADE 4 -->
+        <li>
+          <strong>Atividade 4</strong>
+          <div class="opcoes">
+            <!-- Vi index.html e sandbox.html -->
+            <a href="../atividade4/index.html">Abrir: atividade4/index.html</a>
+            <a class="small" href="../atividade4/sandbox.html">Abrir: atividade4/sandbox.html</a>
+          </div>
+          <div class="hint">Escolha 'sandbox' se estiver testando código lá; index é a página principal.</div>
+        </li>
+
+        <!-- ATIVIDADE 5 -->
+        <li>
+          <strong>Atividade 5</strong>
+          <div class="opcoes">
+            <a href="../atividade5/index.html">Abrir: atividade5/index.html</a>
+          </div>
+          <div class="hint">Descrição: página principal da Atividade 5.</div>
+        </li>
+
+        <!-- ATIVIDADE 6 -->
+        <li>
+          <strong>Atividade 6</strong>
+          <div class="opcoes">
+            <a href="../atividade6/index.html">Abrir: atividade6/index.html</a>
+          </div>
+          <div class="hint">Descrição: atividade 6 (estrutura semântica).</div>
+        </li>
+
+        <!-- ATIVIDADE 7 (esta pasta) -->
+        <li>
+          <strong>Atividade 7</strong>
+          <div class="opcoes">
+            <a href="index.html">Abrir: atividade7/index.html</a>
+            <a class="small" href="consultar.html">Abrir: página de consulta (esta)</a>
+          </div>
+          <div class="hint">Atividade 7 = menu responsivo / índice.</div>
+        </li>
+      </ol>
+
+      <p class="note">Se algum link não abrir, verifique no Explorer (VS Code) o nome exato do arquivo na pasta correspondente e me fala que eu atualizo o link. Depois que confirmar os nomes eu removo as opções duplicadas e deixo só um link por atividade.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2025 — Seu Projeto</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

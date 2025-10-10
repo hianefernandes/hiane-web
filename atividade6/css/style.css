@@ -1,0 +1,126 @@
+/* Variáveis de cor e layout */
+:root{
+  --preto: #0b0b0b;
+  --branco: #ffffff;
+  --cinza: #4a4a4a;
+  --cinza-claro: #e6e6e6;
+  --max-largura: 1100px;
+  --radius: 10px;
+}
+
+/* Reset simples e tipografia */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color:var(--preto);
+  background:linear-gradient(180deg,var(--branco), #fbfbfb);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Container centralizado */
+.container{
+  width:90%;
+  max-width:var(--max-largura);
+  margin:0 auto;
+  padding:18px 0;
+}
+
+/* HEADER */
+.site-header{
+  background:var(--branco);
+  border-bottom:1px solid var(--cinza-claro);
+  position:sticky;
+  top:0;
+  z-index:30;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo{font-size:28px}
+.site-header .container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* NAV simples (topo) */
+.top-nav ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  gap:22px; /* espaçamento maior entre itens */
+}
+.top-nav a{
+  text-decoration:none;
+  color:var(--cinza);
+  font-weight:600;
+  padding:8px 10px;
+  border-radius:8px;
+}
+.top-nav a:hover,
+.top-nav a:focus{
+  background:var(--cinza-claro);
+  color:var(--preto);
+  outline:none;
+}
+
+/* HERO */
+.hero{
+  background: linear-gradient(90deg, rgba(230,230,230,0.3), rgba(255,255,255,0));
+  border-radius:var(--radius);
+  padding:22px;
+  margin:18px 0;
+}
+.hero h2{margin:0 0 8px 0}
+.hero p{margin:0}
+
+/* GRID de artigos */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:18px;
+  align-items:start;
+  margin-bottom:18px;
+}
+.card{
+  background:var(--branco);
+  border:1px solid var(--cinza-claro);
+  padding:16px;
+  border-radius:10px;
+  box-shadow: 0 6px 18px rgba(11,11,11,0.04);
+}
+.card h3{margin-top:0}
+.card-footer{font-size:13px;color:var(--cinza);margin-top:12px}
+
+/* SIDEBAR */
+.sidebar{
+  margin: 0 0 28px 0;
+  padding:16px;
+  border-radius:10px;
+  background:linear-gradient(180deg,var(--cinza-claro), #fff);
+  border:1px solid rgba(0,0,0,0.03);
+}
+
+/* FOOTER */
+.site-footer{
+  border-top:1px solid var(--cinza-claro);
+  padding:14px 0;
+  background:var(--branco);
+  color:var(--cinza);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width:900px){
+  .grid{grid-template-columns: repeat(2,1fr)}
+}
+@media (max-width:600px){
+  .site-header .container{flex-direction:column; gap:12px; align-items:flex-start;}
+  .top-nav ul{gap:12px; flex-wrap:wrap}
+  .grid{grid-template-columns:1fr}
+  .hero{padding:16px}
+}

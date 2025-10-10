@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Atividade 06 — Estrutura Semântica</title>
+  <!-- link pro CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HEADER: título do projeto e nav (pode ser simples aqui) -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <!-- Logo simples (pode trocar por imagem) -->
+      <div class="brand">
+        <!-- emoji casa em preto/branco sugerido -->
+        <span class="logo" aria-hidden="true">🏠</span>
+        <h1>Projeto Principal — Estrutura Semântica</h1>
+      </div>
+
+      <!-- Navegação curta (links locais; ajuste caminhos conforme seu projeto) -->
+      <nav class="top-nav" role="navigation" aria-label="Menu principal">
+        <ul>
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="../atividade1/index.html">Atividade 1</a></li>
+          <li><a href="../atividade5/index.html">Atividade 5</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN: conteúdo principal -->
+  <main class="container" id="main" role="main">
+    <!-- SEÇÃO INTRO: resumo do que é esta atividade -->
+    <section id="intro" class="hero">
+      <h2>Utilizando tags semânticas</h2>
+      <p>Esta página demonstra como agrupar conteúdo com tags semânticas para melhorar organização e acessibilidade.</p>
+    </section>
+
+    <!-- SEÇÃO PRINCIPAL: grid de artigos (uso de <article> para blocos independentes) -->
+    <section id="conteudos" class="grid">
+      <!-- Article 1 -->
+      <article class="card">
+        <header>
+          <h3>Seção 1 — Sobre</h3>
+        </header>
+        <p>Texto descritivo que explica o propósito desta parte do site. Artigos são bons para conteúdo que pode existir individualmente.</p>
+        <footer class="card-footer">Última atualização: hoje</footer>
+      </article>
+
+      <!-- Article 2 com figura -->
+      <article class="card">
+        <figure>
+          <!-- Substitua src por imagem real se quiser -->
+          <svg width="300" height="160" aria-hidden="true" focusable="false" viewBox="0 0 300 160">
+            <rect width="100%" height="100%" fill="var(--cinza-claro)"></rect>
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="var(--cinza)">Imagem</text>
+          </svg>
+          <figcaption>Exemplo de figura com legenda</figcaption>
+        </figure>
+        <h3>Seção 2 — Galeria</h3>
+        <p>Figura ilustrativa usando tag &lt;figure&gt; e &lt;figcaption&gt;.</p>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="card">
+        <h3>Seção 3 — Detalhes</h3>
+        <p>Mais conteúdo agrupado semanticamente. Cada <code>&lt;article&gt;</code> pode conter header/footer próprios.</p>
+      </article>
+    </section>
+
+    <!-- ASIDE: conteúdo complementar (sidebar) -->
+    <aside class="sidebar" role="complementary">
+      <h4>Dicas Rápidas</h4>
+      <ul>
+        <li>Use &lt;section&gt; para temas maiores.</li>
+        <li>Use &lt;article&gt; para conteúdos independentes.</li>
+        <li>Use &lt;aside&gt; para informações secundárias.</li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- FOOTER: informações de rodapé -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© 2025 — Nome do Projeto. Feito por você.</p>
+    </div>
+  </footer>
+</body>
+</html>
