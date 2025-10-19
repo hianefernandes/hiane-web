@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Atividade 9 - Login / Cadastro (Responsive)</title>
+
+  <!-- Link para o CSS externo -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!--
+    Estrutura principal:
+      header: topo com logo/nome
+      main: container responsivo com duas colunas no desktop (form + painel)
+      footer: rodapé simples
+    Todo marcado semanticamente para acessibilidade.
+  -->
+
+  <header class="site-header">
+    <div class="logo">
+      <!-- emoji de casa preto e branco pedido anteriormente - aqui usamos como marca -->
+      <span aria-hidden="true" class="logo-emoji">🏠</span>
+      <h1>Encontre seu imóvel perfeito</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Card principal com sombra e bordas arredondadas -->
+    <section class="card auth-card" aria-labelledby="authTitle">
+      <h2 id="authTitle" class="sr-only">Área de autenticação</h2>
+
+      <!-- Abas: Login / Cadastro -->
+      <nav class="tabs" role="tablist" aria-label="Opções de autenticação">
+        <button class="tab active" role="tab" aria-selected="true" data-target="loginForm">Login</button>
+        <button class="tab" role="tab" aria-selected="false" data-target="registerForm">Cadastro</button>
+      </nav>
+
+      <!-- Conteúdo das abas (mobile-first: empilhado) -->
+      <div class="tab-content">
+        <!-- Login -->
+        <form id="loginForm" class="form active" novalidate>
+          <!-- (comentário explicando cada input abaixo como se fosse você escrevendo) -->
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="seu@exemplo.com" required />
+
+          <label for="password">Senha</label>
+          <input id="password" name="password" type="password" placeholder="••••••••" required />
+
+          <div class="form-row">
+            <button type="submit" class="btn primary">Entrar</button>
+            <button type="button" id="showUsersBtn" class="btn secondary">Usuários Cadastrados</button>
+          </div>
+        </form>
+
+        <!-- Cadastro -->
+        <form id="registerForm" class="form" novalidate>
+          <label for="name">Nome completo</label>
+          <input id="name" name="name" type="text" placeholder="Seu nome" required />
+
+          <label for="regEmail">Email</label>
+          <input id="regEmail" name="regEmail" type="email" placeholder="seu@exemplo.com" required />
+
+          <label for="phone">Telefone</label>
+          <input id="phone" name="phone" type="tel" placeholder="(99) 99999-9999" />
+
+          <label for="regPassword">Senha</label>
+          <input id="regPassword" name="regPassword" type="password" placeholder="Crie uma senha" required />
+
+          <div class="form-row">
+            <button type="submit" class="btn primary">Cadastrar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Painel lateral com informação / anúncios / tabela de usuários (aparece ao lado no desktop) -->
+    <aside class="card side-card" aria-labelledby="sideTitle">
+      <h3 id="sideTitle">Painel</h3>
+      <p class="muted">Aqui ficam anúncios, instruções e a lista de usuários fictícios.</p>
+
+      <!-- Área de anúncios (3 cards simples) -->
+      <div class="announcements">
+        <article class="ad">
+          <h4>Imóvel destaque</h4>
+          <p>Casa moderna, 3 quartos — em bairro nobre.</p>
+        </article>
+        <article class="ad">
+          <h4>Aluguel</h4>
+          <p>Apartamento 2 quartos — localização central.</p>
+        </article>
+        <article class="ad">
+          <h4>Promoção</h4>
+          <p>Cadastro rápido e seguro — veja ofertas.</p>
+        </article>
+      </div>
+
+      <!-- Tabela de usuários fake (inicialmente escondida) -->
+      <div id="usersTableWrap" class="users-wrap" hidden>
+        <h4>Usuários Cadastrados</h4>
+        <table id="usersTable" class="users-table" aria-label="Tabela de usuários fictícios">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Telefone</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- preenchido via JS -->
+          </tbody>
+        </table>
+        <button id="hideUsersBtn" class="btn tertiary">Fechar lista</button>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <small>Atividade 9 — Responsividade com Flexbox e Media Queries — Cores: preto / cinza / branco</small>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
